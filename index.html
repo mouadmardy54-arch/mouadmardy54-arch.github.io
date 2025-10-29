@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mardy Mouad — E-Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #0a1a2a;
+        background-color: #e9f3ff;
+        scroll-behavior: smooth;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 12px 0;
+        z-index: 100;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav a {
+        color: #064080;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 1.05em;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    nav a:hover {
+        color: #1A4D8F;
+    }
+
+    .section {
+        padding: 120px 20px;
+        min-height: 90vh;
+        text-align: center;
+        display: none;
+    }
+    .section.active {
+        display: block;
+    }
+
+    .photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid #1A4D8F;
+        object-fit: cover;
+        margin: 0 auto 20px auto;
+    }
+
+    h1, h2, h3 {
+        color: #064080;
+    }
+
+    p {
+        max-width: 850px;
+        margin: 10px auto 20px auto;
+        font-size: 1.2em;
+        line-height: 1.6em;
+    }
+
+    .content-box {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        text-align: left;
+    }
+
+    .content-text {
+        flex: 2;
+        min-width: 300px;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .content-img {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .content-img img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    /* Styles pour la section Engineering */
+    .project {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: left;
+    }
+    .project h3 {
+        text-align: center;
+        margin-top: 0;
+        color: #064080;
+    }
+    .project p,
+    .project ul {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: justify;
+    }
+    .project ul {
+        list-style-position: inside;
+    }
+
+    iframe {
+        width: 80%;
+        height: 400px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    footer {
+        background-color: #ffffff;
+        color: #064080;
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .links a {
+        background: #1A4D8F;
+        border-radius: 6px;
+        padding: 12px 25px;
+        display: inline-block;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    .civic-card {
+        flex: 1;
+        min-width: 250px;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    .civic-card ul {
+        padding-left: 20px;
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('engineering')">Engineering</a>
+    <a onclick="showSection('mobility')">Mobility</a>
+    <a onclick="showSection('civic')">Civic Engagement</a>
+    <a onclick="showSection('sports')">Sports</a>
+    <a onclick="showSection('career')">Career</a>
+</nav>
+
+<section id="home" class="section active">
+    <img src="images/photo.jpg" class="photo" alt="My Photo">
+    <h1>MARDY MOUAD</h1>
+    <p>
+        I am a Computer Sciences student at ENSEEIHT, passionate about programming and 
+        technological innovation. I enjoy developing smart digital solutions and 
+        working with others on ambitious and creative projects. I aim to become a 
+        software engineer able to design efficient and user-friendly applications.
+    </p>
+    <div class="links">
+        <a href="YOUR-FRENCH-CV.pdf" target="_blank">📄 CV in French</a>
+        <a href="YOUR-ENGLISH-CV.pdf" target="_blank">📄 CV in English</a>
+        <a href="https://www.linkedin.com/in/TON-LINKEDIN" target="_blank">🔗 LinkedIn</a>
+        <a href="YOUR-VIDEO-LINK" target="_blank">🎬 Presentation Video</a>
+    </div>
+</section>
+
+<!-- Section Engineering -->
+<section id="engineering" class="section">
+    <h2 style="text-align:center; margin-bottom:40px;">Engineering Projects 🚀</h2>
+
+    <div class="project">
+        <h3>🔹 Interactive Multiplication Table (Ada)</h3>
+        <p>
+            Created at ENSEEIHT in an Ada programming course, this application helps children
+            practice multiplication tables through a simple and motivating interface. It generates
+            random exercises, checks answers instantly, and tracks progress to encourage learning.
+        </p>
+        <ul>
+            <li>Strengthened skills in Ada and structured programming</li>
+            <li>Better algorithm design and data validation</li>
+            <li>Experience developing educational and interactive tools</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>🔹 Python Data Visualizer</h3>
+        <p>
+            Developed at Lycée Mohammed VI d’Excellence, this software analyzes datasets,
+            computes key statistics, and generates clear and interpretable graphs. The aim was
+            to extract insights from raw data and present them in a visually efficient manner.
+        </p>
+        <ul>
+            <li>Advanced use of Python, Pandas and Matplotlib</li>
+            <li>Ability to interpret datasets and reveal trends</li>
+            <li>Better understanding of data-driven analysis workflows</li>
+        </ul>
+    </div>
+</section>
+
+<section id="mobility" class="section">
+    <h2>International Mobility Objectives</h2>
+
+    <div class="content-box">
+        <div class="content-text">
+            <h3>Berlin, Germany — Berliner Hochschule für Technik</h3>
+            <p>
+                Berlin is a dynamic European tech hub, hosting startups, research labs, and global companies in cybersecurity, AI, and digital innovation.  
+                BHT offers software engineering, networks, and cyber-physical system courses aligned with my studies.
+            </p>
+            <ul>
+                <li>Engage in collaborative programming projects with international peers.</li>
+                <li>Gain practical experience in cybersecurity, IoT, and AI applications.</li>
+                <li>Strengthen problem-solving skills by tackling real-world software challenges.</li>
+            </ul>
+        </div>
+        <div class="content-img">
+            <img src="berline.JPG" alt="Berlin photo">
+        </div>
+    </div>
+
+    <div class="content-box">
+        <div class="content-text">
+            <h3>Montreal, Canada — Concordia University</h3>
+            <p>
+                Montreal is a vibrant tech city with AI, gaming, aerospace, and software industries. Concordia University offers embedded systems, AI, and software engineering courses complementing my digital sciences curriculum.
+            </p>
+            <ul>
+                <li>Participate in project-based learning developing software for real applications.</li>
+                <li>Enhance coding and data processing skills in English.</li>
+                <li>Explore AI and machine learning projects linked to my coursework.</li>
+            </ul>
+        </div>
+        <div class="content-img">
+            <img src="canada.webp" alt="Montreal photo">
+        </div>
+    </div>
+
+    <div class="content-box">
+        <div class="content-text">
+            <h3>Bern, Switzerland — BFH Berner Fachhochschule</h3>
+            <p>
+                Bern is known for high-quality living and applied sciences excellence. BFH focuses on industrial IT, data analytics, and automation projects, relevant to my studies.
+            </p>
+            <ul>
+                <li>Work on real industrial digital projects.</li>
+                <li>Develop software and data solutions in collaboration with companies.</li>
+                <li>Strengthen precision, analytical thinking, and project management skills.</li>
+            </ul>
+        </div>
+        <div class="content-img">
+            <img src="berne.JPEG" alt="Bern photo">
+        </div>
+    </div>
+</section>
+
+<section id="civic" class="section">
+    <h2 style="text-align:center; margin-bottom:40px;">Civic Engagement 🌍</h2>
+
+    <p style="max-width:850px; margin:0 auto 35px auto; font-size:1.2em;">
+        I actively participate in initiatives that promote social responsibility, inclusion,
+        justice, and environmental awareness. These actions shape who I am beyond engineering.
+    </p>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+
+        <div class="civic-card">
+            <h3>🎭 Interactive Theatre: "King Kong"</h3>
+            <p>Immersive theatre addressing gender equality and stereotypes.</p>
+            <ul>
+                <li>Better understanding of gender issues (VSS)</li>
+                <li>Improved empathy and critical thinking</li>
+                <li>Commitment to inclusiveness</li>
+            </ul>
+        </div>
+
+        <div class="civic-card">
+            <h3>🎬 Documentary: "Picture a Scientist"</h3>
+            <p>Explored barriers women face in STEM (Science, Technology, Engineering, and Mathematics) fields.</p>
+            <ul>
+                <li>Support for diversity and scientific equity</li>
+                <li>Motivation to mentor others</li>
+                <li>Awareness of structural challenges</li>
+            </ul>
+        </div>
+
+        <div class="civic-card">
+            <h3>🕌 Ramadan Charity Initiative</h3>
+            <p>Food distribution to families in need.</p>
+            <ul>
+                <li>Teamwork in real humanitarian missions</li>
+                <li>Organizational and leadership skills</li>
+                <li>Commitment to active citizenship</li>
+            </ul>
+        </div>
+
+        <div class="civic-card">
+            <h3>🌱 Fresque du Climat Workshop</h3>
+            <p>Collaborative analysis of climate change causes and solutions.</p>
+            <ul>
+                <li>Environmental awareness</li>
+                <li>Group problem-solving</li>
+                <li>Responsibility for sustainability in tech</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section id="sports" class="section">
+    <h2>Sports & Activities</h2>
+
+    <div class="content-box">
+        <div class="content-text">
+            <h3>Football</h3>
+            <p>Football requires strategy, collaboration, and effective communication.</p>
+            <p>It allows me to apply teamwork skills in software projects, develop leadership, and manage stress in challenging coding tasks.</p>
+        </div>
+        <div class="content-img">
+            <img src="ball.JPG" alt="Football image">
+        </div>
+    </div>
+
+    <div class="content-box">
+        <div class="content-text">
+            <h3>Chess</h3>
+            <p>Chess sharpens long-term planning, pattern recognition, and problem-solving skills.</p>
+            <p>It allows me to improve algorithmic thinking, decision-making, and systematic debugging in programming.</p>
+        </div>
+        <div class="content-img">
+            <img src="chess1.JPG" alt="Chess image">
+        </div>
+    </div>
+</section>
+
+<section id="career" class="section">
+    <h2>Career Development</h2>
+    <p>I am building professional skills through courses, teamwork, and personal projects.</p>
+    <div class="links">
+        <a href="YOUR-FRENCH-CV.pdf" target="_blank">📄 CV in French</a>
+        <a href="YOUR-ENGLISH-CV.pdf" target="_blank">📄 CV in English</a>
+        <a href="https://www.linkedin.com/in/TON-LINKEDIN" target="_blank">🔗 LinkedIn</a>
+        <a href="YOUR-VIDEO-LINK" target="_blank">🎬 Presentation Video</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Mardy Mouad — ENSEEIHT Toulouse
+</footer>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>
